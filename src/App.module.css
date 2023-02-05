@@ -5,3 +5,8 @@
     display: flex;
     flex-direction: row;
 }
+
+.contentRow {
+    display: flex;
+    flex-direction: column;
+}

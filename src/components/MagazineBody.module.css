@@ -7,6 +7,7 @@
 
     /*position: absolute;*/
     /*z-index: -1;*/
+    padding: 10% 0;
     /*border: 1px solid black;*/
 }
 
@@ -46,4 +47,8 @@
 .selectedStores {
     text-decoration: none;
     color: deeppink;
+}
+
+.lastLine {
+    margin-top: 12px;
 }
