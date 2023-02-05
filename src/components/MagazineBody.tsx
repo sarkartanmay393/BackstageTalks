@@ -17,11 +17,14 @@ const MagazineBody = ({ name, buy_link, stockAvailable, image}: magazine) => {
                         <>
                             <h3>{name}</h3>
                             <a className={styles.MagazineBuy} href={buy_link}>Buy Here</a>
-                        </> : <h3>{name} is sold out!</h3>
+                            <h4>or in <a className={styles.selectedStores} href='/stores'>selected stores</a>.</h4>
+
+                        </> :
+                    <>
+                        <h3>{name} is sold out!</h3>
+                        <h4 className={styles.lastLine}>If you are lucky, you may get the last pieces in <a className={styles.selectedStores} href='/stores'>selected stores</a>.</h4>
+                    </>
                 }
-                {stockAvailable ?
-                    <h4>or in <a className={styles.selectedStores} href='/stores'>selected stores</a>.</h4>
-                    : <h4 className={styles.lastLine}>If you are lucky, you may get the last pieces in <a className={styles.selectedStores} href='/stores'>selected stores</a>.</h4>}
             </section>
         </main>
     );

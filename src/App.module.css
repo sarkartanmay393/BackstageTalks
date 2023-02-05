@@ -9,4 +9,7 @@
 .contentRow {
     display: flex;
     flex-direction: column;
+
+    overflow-y: auto;
+    scroll-snap-type: y;
 }
