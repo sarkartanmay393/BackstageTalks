@@ -1,0 +1,133 @@
+.header {
+    width: 100vw;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 16px;
+    /*border: 1px solid black;*/
+
+    font-weight: bold;
+    position: fixed;
+    top: 0%;
+}
+
+.header * {
+    text-decoration: none;
+}
+
+.headerImage {
+    width: 18%;
+    cursor: pointer;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    z-index: 1;
+    /*border: 1px solid black;*/
+}
+
+.main * {
+    text-decoration: none;
+}
+
+.MainMagazineOverview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 50%;
+    height: 100%;
+
+    border: 0px solid black;
+}
+
+.MagazineCover {
+    width: 60%;
+}
+
+.MagazineBuy {
+    background: none;
+    border: 0px;
+
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    /*text-decoration: none;*/
+
+    color: deeppink;
+    margin: 1rem 0;
+}
+
+.selectedStores {
+    text-decoration: none;
+    color: deeppink;
+}
+
+.footer {
+    width: 100vw;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 16px;
+    /*border: 1px solid black;*/
+
+    position: fixed;
+    bottom: 0%;
+}
+
+.FooterLeft {
+    width: 20%;
+}
+
+.FooterLeftTop {
+    margin-bottom: 22px;
+}
+
+.FooterLeftTop * {
+    margin: 8px 0;
+}
+
+.FooterText {
+    font-size: 18px;
+}
+
+.CopyrightText {
+    font-size: 12px;
+}
+
+.PrivacyButton {
+    color: black;
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+.FooterRight {
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.FooterRight * {
+    font-size: 18px;
+    margin: 6px 0;
+    text-decoration: none;
+}
+
