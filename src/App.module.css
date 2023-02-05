@@ -1,29 +1,69 @@
-.header {
+.app {
     width: 100vw;
-    height: fit-content;
+    height: 100vh;
 
     display: flex;
     flex-direction: row;
+}
 
-    align-items: center;
+.LeftSideBar {
+    width: 25vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    /*align-items: center;*/
     justify-content: space-between;
 
-    padding: 18px 16px;
+    padding: 18px 12px;
     /*border: 1px solid black;*/
 
     font-weight: bold;
     position: fixed;
-    top: 0%;
-}
-
-.header * {
-    text-decoration: none;
+    left: 0%;
 }
 
 .headerImage {
-    width: 18%;
+    width: 80%;
+    height: fit-content;
     cursor: pointer;
 }
+
+.LeftSideBarBottom {
+    width: 100%;
+}
+
+.Top {
+    margin-bottom: 22px;
+}
+
+.Top * {
+    margin: 8px 0;
+}
+
+.TopText {
+    font-size: 18px;
+}
+
+.CopyrightText {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.PrivacyButton {
+    color: black;
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+
+
+
+
+
 
 .main {
     width: 100vw;
@@ -32,8 +72,8 @@
     display: flex;
     justify-content: center;
 
-    position: absolute;
-    z-index: 1;
+    /*position: absolute;*/
+    /*z-index: -1;*/
     /*border: 1px solid black;*/
 }
 
@@ -75,48 +115,24 @@
     color: deeppink;
 }
 
+
+
+/* Footer Styles */
 .footer {
-    width: 100vw;
-    height: fit-content;
+    width: 25vw;
+    height: 100vh;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 
-    padding: 18px 16px;
+    padding: 18px 12px;
     /*border: 1px solid black;*/
 
     position: fixed;
-    bottom: 0%;
-}
-
-.FooterLeft {
-    width: 20%;
-}
-
-.FooterLeftTop {
-    margin-bottom: 22px;
-}
-
-.FooterLeftTop * {
-    margin: 8px 0;
-}
-
-.FooterText {
-    font-size: 18px;
-}
-
-.CopyrightText {
-    font-size: 12px;
-}
-
-.PrivacyButton {
-    color: black;
-    font-size: 18px;
-
-    font-weight: 600;
+    right: 0%;
 }
 
 .FooterRight {
@@ -128,6 +144,9 @@
 .FooterRight * {
     font-size: 18px;
     margin: 6px 0;
+}
+
+.footer * {
     text-decoration: none;
 }
 

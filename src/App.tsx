@@ -10,23 +10,12 @@ function App() {
     }
 
     return (
-        <>
-            <header className={styles.header}>
+        <section className={styles.app}>
+            <header className={styles.LeftSideBar}>
                 <img className={styles.headerImage} src={LogoIcon} alt='backstage-logo' onClick={Reload}/>
-                <a href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4></a>
-            </header>
-            <main className={styles.main}>
-                <section className={styles.MainMagazineOverview}>
-                    <img className={styles.MagazineCover} src={require('./assets/cover_issue_6.png')} alt='backstage_cover_issue_6' />
-                    <h3>Issue #6</h3>
-                    <a className={styles.MagazineBuy} href={issue6url}>Buy Here</a>
-                    <h4>or in <a className={styles.selectedStores} href='/stores'>selected stores</a>.</h4>
-                </section>
-            </main>
-            <footer className={styles.footer}>
-                <section className={styles.FooterLeft}>
-                    <div className={styles.FooterLeftTop}>
-                        <h4 className={styles.FooterText}>
+                <section className={styles.LeftSideBarBottom}>
+                    <div className={styles.Top}>
+                        <h4 className={styles.TopText}>
                             Backstage Talks is a magazine of casual, but in depth dialogues on design and
                             business. Our decisions shape and influence this complex world—to have a chance
                             to make the right ones, we need to talk.
@@ -37,6 +26,19 @@ function App() {
                     </div>
                     <a href='/privacy-policy' className={styles.PrivacyButton}>Privacy Policy</a>
                 </section>
+            </header>
+
+            <main className={styles.main}>
+                <section className={styles.MainMagazineOverview}>
+                    <img className={styles.MagazineCover} src={require('./assets/cover_issue_6.png')} alt='backstage_cover_issue_6' />
+                    <h3>Issue #6</h3>
+                    <a className={styles.MagazineBuy} href={issue6url}>Buy Here</a>
+                    <h4>or in <a className={styles.selectedStores} href='/stores'>selected stores</a>.</h4>
+                </section>
+            </main>
+
+            <footer className={styles.footer}>
+                <a href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4></a>
                 <section className={styles.FooterRight}>
                     <a href='/#issue6'>Issue #6</a>
                     <a href='/#issue5'>Issue #5</a>
@@ -46,7 +48,7 @@ function App() {
                     <a href='/#issue1'>Issue #1</a>
                 </section>
             </footer>
-        </>
+        </section>
     );
 }
 
