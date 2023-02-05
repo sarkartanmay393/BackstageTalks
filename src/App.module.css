@@ -1,0 +1,64 @@
+.header {
+    width: 100vw;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px;
+    /*border: 1px solid black;*/
+
+    font-weight: bold;
+    position: fixed;
+    top: 0%;
+}
+
+.headerImage {
+    width: 20%;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid black;*/
+}
+
+.MainMagazineOverview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 50%;
+    height: 100%;
+
+    border: 0px solid black;
+}
+
+.MagazineCover {
+    width: 60%;
+}
+
+.MagazineButton {
+    background: none;
+    border: 0px;
+
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    color: deeppink;
+    width: fit-content;
+    margin: 1rem 0;
+}
+
+.selectedStores {
+    text-decoration: none;
+    color: deeppink;
+}
