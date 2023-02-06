@@ -83,14 +83,17 @@ function App() {
                 <MagazineBody {...magazines[3]}/>
                 <MagazineBody {...magazines[4]}/>
                 <MagazineBody {...magazines[5]}/>
+                {isMobile ? <FooterLeftArea /> : <></>}
             </section>
             <footer className={styles.footer}>
                 {/* If mobile, footer is become row & will hold footerleft*/}
-                {isMobile ? <></> :
-                    <>
-                        <a className={styles.MailText} href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4>
-                        </a><FooterRightArea/>
-                    </>}
+                {isMobile ?
+                    <></> : <>
+                        <a className={styles.MailText} href='mailto:info@backstagetalks.com'>
+                            <h4>info@backstagetalks.com</h4> </a>
+                        <FooterRightArea/>
+                    </>
+                }
             </footer>
 
         </section>

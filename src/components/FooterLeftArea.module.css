@@ -25,3 +25,30 @@
 
     font-weight: 600;
 }
+
+
+@media (max-width: 600px) {
+    .LeftSideBarBottom {
+        border-top: 1px solid white;
+
+        scroll-snap-align: start;
+        background-color: #e30512;
+
+        color: white;
+        padding: 14px 18px 18px 18px;
+        text-align: center;
+    }
+
+    .LeftSideBarBottom * {
+        color: white;
+    }
+
+    .CopyrightText {
+        font-weight: 500;
+    }
+
+    .PrivacyButton {
+        text-decoration: none;
+        color: lightyellow;
+    }
+}
