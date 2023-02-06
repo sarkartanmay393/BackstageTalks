@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './App.module.css';
 import FooterLeftArea from "./components/FooterLeftArea";
 import MagazineBody from "./components/MagazineBody";
@@ -14,7 +14,7 @@ const CoverImageIssue2 = require('./assets/cover_issue_2.png');
 const CoverImageIssue1 = require('./assets/cover_issue_1.png');
 
 function App() {
-
+    const [isMobile, setIsMobile] = useState(window.screen.width < 600);
     const magazines = [
         {
             name: "Issue #6",
@@ -73,7 +73,8 @@ function App() {
         <section className={styles.app}>
             <header className={styles.LeftSideBar}>
                 <img className={styles.headerImage} src={LogoIcon} alt='backstage-logo' onClick={Reload}/>
-                <FooterLeftArea />
+                {/* If mobile, LeftSidebar is become row & will hold Logo and MailText*/}
+                {isMobile ? <a className={styles.MailText} href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4></a> : <FooterLeftArea />}
             </header>
             <section className={styles.contentRow}>
                 <MagazineBody {...magazines[0]}/>
@@ -84,8 +85,12 @@ function App() {
                 <MagazineBody {...magazines[5]}/>
             </section>
             <footer className={styles.footer}>
-                <a href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4></a>
-                <FooterRightArea />
+                {/* If mobile, footer is become row & will hold footerleft*/}
+                {isMobile ? <></> :
+                    <>
+                        <a className={styles.MailText} href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4>
+                        </a><FooterRightArea/>
+                    </>}
             </footer>
 
         </section>

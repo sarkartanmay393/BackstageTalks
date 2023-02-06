@@ -34,6 +34,13 @@
     right: 0%;
 }
 
+@media (max-width: 600px) {
+    .footer {
+        width: 100vw;
+        height: fit-content;
+    }
+}
+
 /*Left*/
 .LeftSideBar {
     width: 25vw;
@@ -53,15 +60,28 @@
     left: 0%;
 }
 
-@media (max-width: 600px) {
-    .LeftSideBar {
-        /*height: 100%;*/
-        /*padding: 0;*/
-    }
-}
-
 .headerImage {
     width: 80%;
     height: fit-content;
     cursor: pointer;
+}
+
+
+
+@media (max-width: 600px) {
+    .LeftSideBar {
+        width: 100vw;
+        height: fit-content;
+
+        display: flex;
+        flex-direction: row;
+
+    }
+    .headerImage {
+        width: 30%;
+    }
+
+    .MailText {
+        font-size: 13px;
+    }
 }
