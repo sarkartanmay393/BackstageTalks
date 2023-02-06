@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './App.module.css';
 import FooterLeftArea from "./components/FooterLeftArea";
 import MagazineBody from "./components/MagazineBody";
-import RightSidebar from "./components/RightSidebar";
+import FooterRightArea from "./components/FooterRightArea";
 import LogoIcon from './assets/logo.png';
 
 
@@ -83,7 +83,11 @@ function App() {
                 <MagazineBody {...magazines[4]}/>
                 <MagazineBody {...magazines[5]}/>
             </section>
-            <RightSidebar />
+            <footer className={styles.footer}>
+                <a href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4></a>
+                <FooterRightArea />
+            </footer>
+
         </section>
     );
 }
