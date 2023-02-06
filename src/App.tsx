@@ -66,7 +66,8 @@ function App() {
         },
     ];
     const Reload = () => {
-        window.open('/');
+        setIsMobile(window.screen.width < 600);
+        window.open('/', '_self');
     }
 
     return (
@@ -85,16 +86,15 @@ function App() {
                 <MagazineBody {...magazines[5]}/>
                 {isMobile ? <FooterLeftArea /> : <></>}
             </section>
-            <footer className={styles.footer}>
-                {/* If mobile, footer is become row & will hold footerleft*/}
-                {isMobile ?
-                    <></> : <>
-                        <a className={styles.MailText} href='mailto:info@backstagetalks.com'>
-                            <h4>info@backstagetalks.com</h4> </a>
-                        <FooterRightArea/>
-                    </>
-                }
-            </footer>
+            {isMobile ?
+                <></> :
+                <footer className={styles.footer}>
+                    {/* If mobile, footer is become row & will hold footerleft*/}
+                    <a className={styles.MailText} href='mailto:info@backstagetalks.com'>
+                        <h4>info@backstagetalks.com</h4> </a>
+                    <FooterRightArea/>
+                </footer>
+            }
 
         </section>
     );
