@@ -53,3 +53,15 @@
 .lastLine {
     margin-top: 12px;
 }
+
+
+@media (max-width: 600px) {
+    .MainMagazineOverview {
+        width: 100%;
+        padding: 0px 14px;
+        text-align: center;
+    }
+    .MagazineCover {
+        width: 90%;
+    }
+}
