@@ -1,0 +1,27 @@
+.LeftSideBarBottom {
+    width: 100%;
+}
+
+.Top {
+    margin-bottom: 22px;
+}
+
+.Top * {
+    margin: 8px 0;
+}
+
+.TopText {
+    font-size: 18px;
+}
+
+.CopyrightText {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.PrivacyButton {
+    color: black;
+    font-size: 18px;
+
+    font-weight: 600;
+}

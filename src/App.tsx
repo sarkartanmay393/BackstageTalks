@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './App.module.css';
-import LeftSidebar from "./components/LeftSidebar";
+import FooterLeftArea from "./components/FooterLeftArea";
 import MagazineBody from "./components/MagazineBody";
 import RightSidebar from "./components/RightSidebar";
+import LogoIcon from './assets/logo.png';
 
 
 const CoverImageIssue6 = require('./assets/cover_issue_6.png');
@@ -64,10 +65,16 @@ function App() {
             backgroundColor: '#e30512',
         },
     ];
+    const Reload = () => {
+        window.open('/');
+    }
 
     return (
         <section className={styles.app}>
-            <LeftSidebar />
+            <header className={styles.LeftSideBar}>
+                <img className={styles.headerImage} src={LogoIcon} alt='backstage-logo' onClick={Reload}/>
+                <FooterLeftArea />
+            </header>
             <section className={styles.contentRow}>
                 <MagazineBody {...magazines[0]}/>
                 <MagazineBody {...magazines[1]}/>
