@@ -1,0 +1,17 @@
+/* Footer Styles */
+
+
+.FooterRight {
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.FooterRight * {
+    font-size: 18px;
+    margin: 6px 0;
+}
+
+.footer * {
+    text-decoration: none;
+}

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './App.module.css';
-import LeftSidebar from "./components/LeftSidebar";
+import FooterLeftArea from "./components/FooterLeftArea";
 import MagazineBody from "./components/MagazineBody";
-import RightSidebar from "./components/RightSidebar";
+import FooterRightArea from "./components/FooterRightArea";
+import LogoIcon from './assets/logo.png';
 
 
 const CoverImageIssue6 = require('./assets/cover_issue_6.png');
@@ -13,7 +14,7 @@ const CoverImageIssue2 = require('./assets/cover_issue_2.png');
 const CoverImageIssue1 = require('./assets/cover_issue_1.png');
 
 function App() {
-
+    const [isMobile, setIsMobile] = useState(window.screen.width < 600);
     const magazines = [
         {
             name: "Issue #6",
@@ -64,10 +65,18 @@ function App() {
             backgroundColor: '#e30512',
         },
     ];
+    const Reload = () => {
+        setIsMobile(window.screen.width < 600);
+        window.open('/', '_self');
+    }
 
     return (
         <section className={styles.app}>
-            <LeftSidebar />
+            <header className={styles.LeftSideBar}>
+                <img className={styles.headerImage} src={LogoIcon} alt='backstage-logo' onClick={Reload}/>
+                {/* If mobile, LeftSidebar is become row & will hold Logo and MailText*/}
+                {isMobile ? <a className={styles.MailText} href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4></a> : <FooterLeftArea />}
+            </header>
             <section className={styles.contentRow}>
                 <MagazineBody {...magazines[0]}/>
                 <MagazineBody {...magazines[1]}/>
@@ -75,8 +84,18 @@ function App() {
                 <MagazineBody {...magazines[3]}/>
                 <MagazineBody {...magazines[4]}/>
                 <MagazineBody {...magazines[5]}/>
+                {isMobile ? <FooterLeftArea /> : <></>}
             </section>
-            <RightSidebar />
+            {isMobile ?
+                <></> :
+                <footer className={styles.footer}>
+                    {/* If mobile, footer is become row & will hold footerleft*/}
+                    <a className={styles.MailText} href='mailto:info@backstagetalks.com'>
+                        <h4>info@backstagetalks.com</h4> </a>
+                    <FooterRightArea/>
+                </footer>
+            }
+
         </section>
     );
 }
