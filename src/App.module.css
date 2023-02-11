@@ -32,12 +32,22 @@
     cursor: pointer;
 }
 
+@keyframes bg {
+    to {
+        background-color: var(--bgColor);
+    }
+}
+
 .contentRow {
     display: flex;
     flex-direction: column;
 
     overflow-y: auto;
     scroll-snap-type: y mandatory;
+    background-color: white;
+
+    animation: bg 1s linear;
+    animation-play-state: paused;
 }
 
 /*Right*/
@@ -71,6 +81,7 @@
         position: absolute;
 
     }
+
     .headerImage {
         width: 35%;
     }

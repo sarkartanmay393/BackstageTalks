@@ -8,8 +8,9 @@
     justify-content: center;
     /*padding: 10% 0;*/
     /*border: 1px solid black;*/
-    animation: bg 1s linear;
 }
+
+
 
 .main * {
     text-decoration: none;

@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createContext } from 'vm';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+export const BgColor = createContext();
+
 root.render(
   <React.StrictMode>
-    <App />
+    <BgColor.Provider value={"white"}>
+      <App />
+    </BgColor.Provider>
   </React.StrictMode>
 );
 

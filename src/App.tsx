@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from './App.module.css';
 import FooterLeftArea from "./components/FooterLeftArea";
 import MagazineBody from "./components/MagazineBody";
@@ -69,21 +69,25 @@ function App() {
         setIsMobile(window.screen.width < 600);
         window.open('/', '_self');
     }
+    const [bgColor, setbgColor] = useState("lightgreen");
 
     return (
         <section className={styles.app}>
             <header className={styles.LeftSideBar}>
-                <img className={styles.headerImage} src={LogoIcon} alt='backstage-logo' onClick={Reload}/>
+                <img className={styles.headerImage} src={LogoIcon} alt='backstage-logo' onClick={Reload} />
                 {/* If mobile, LeftSidebar is become row & will hold Logo and MailText*/}
                 {isMobile ? <a className={styles.MailText} href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4></a> : <FooterLeftArea />}
             </header>
-            <section className={styles.contentRow}>
-                <MagazineBody {...magazines[0]}/>
-                <MagazineBody {...magazines[1]}/>
-                <MagazineBody {...magazines[2]}/>
-                <MagazineBody {...magazines[3]}/>
-                <MagazineBody {...magazines[4]}/>
-                <MagazineBody {...magazines[5]}/>
+            <section className={styles.contentRow} style={{
+                backgroundColor: bgColor,
+                animationDelay: "calc(var(--bg))"
+            }}>
+                <MagazineBody {...magazines[0]} />
+                <MagazineBody {...magazines[1]} />
+                <MagazineBody {...magazines[2]} />
+                <MagazineBody {...magazines[3]} />
+                <MagazineBody {...magazines[4]} />
+                <MagazineBody {...magazines[5]} />
                 {isMobile ? <FooterLeftArea /> : <></>}
             </section>
             {isMobile ?
@@ -92,7 +96,7 @@ function App() {
                     {/* If mobile, footer is become row & will hold footerleft*/}
                     <a className={styles.MailText} href='mailto:info@backstagetalks.com'>
                         <h4>info@backstagetalks.com</h4> </a>
-                    <FooterRightArea/>
+                    <FooterRightArea />
                 </footer>
             }
 
