@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { BgColor } from "../App";
 import styles from "./MagazineBody.module.css";
 
 interface magazine {
@@ -8,19 +9,31 @@ interface magazine {
     image: any
     primaryColor: string,
     backgroundColor: string,
-    setColor: any
 }
 
-const MagazineBody = ({ name, buy_link, stockAvailable, image, primaryColor, backgroundColor, setColor}: magazine) => {
-    // window.onscroll = () => {
-    //     const screenHeight = window.screen.height;
-    //     if (document.body.offsetHeight > screenHeight) {
+function isInViewport(element: HTMLElement | null) {
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+}
 
-    //     }
-    // };
+const MagazineBody = ({ name, buy_link, stockAvailable, image, primaryColor, backgroundColor }: magazine) => {
+    const setBgColor = useContext(BgColor);
+    window.onscroll = () => {
+        if (isInViewport(document.getElementById(name))) {
+            setBgColor(backgroundColor);
+        }
+    }
+
 
     return (
-        <main className={styles.main} >
+        <main id={name} className={styles.main} style={{ backgroundColor: backgroundColor }} >
             <section className={styles.MainMagazineOverview}>
                 <img className={styles.MagazineCover} src={image} alt='backstage_cover_issue_6' />
                 {stockAvailable ?

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import styles from './App.module.css';
 import FooterLeftArea from "./components/FooterLeftArea";
 import MagazineBody from "./components/MagazineBody";
@@ -12,6 +12,8 @@ const CoverImageIssue4 = require('./assets/cover_issue_4.png');
 const CoverImageIssue3 = require('./assets/cover_issue_3.png');
 const CoverImageIssue2 = require('./assets/cover_issue_2.png');
 const CoverImageIssue1 = require('./assets/cover_issue_1.png');
+
+export const BgColor = createContext<any>({});
 
 function App() {
     const [isMobile, setIsMobile] = useState(window.screen.width < 600);
@@ -69,38 +71,41 @@ function App() {
         setIsMobile(window.screen.width < 600);
         window.open('/', '_self');
     }
-    const [bgColor, setbgColor] = useState("lightgreen");
+
+    const [bgColor, setBgColor] = useState("white");
 
     return (
-        <section className={styles.app}>
-            <header className={styles.LeftSideBar}>
-                <img className={styles.headerImage} src={LogoIcon} alt='backstage-logo' onClick={Reload} />
-                {/* If mobile, LeftSidebar is become row & will hold Logo and MailText*/}
-                {isMobile ? <a className={styles.MailText} href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4></a> : <FooterLeftArea />}
-            </header>
-            <section className={styles.contentRow} style={{
-                backgroundColor: bgColor,
-                animationDelay: "calc(var(--bg))"
-            }}>
-                <MagazineBody {...magazines[0]} />
-                <MagazineBody {...magazines[1]} />
-                <MagazineBody {...magazines[2]} />
-                <MagazineBody {...magazines[3]} />
-                <MagazineBody {...magazines[4]} />
-                <MagazineBody {...magazines[5]} />
-                {isMobile ? <FooterLeftArea /> : <></>}
-            </section>
-            {isMobile ?
-                <></> :
-                <footer className={styles.footer}>
-                    {/* If mobile, footer is become row & will hold footerleft*/}
-                    <a className={styles.MailText} href='mailto:info@backstagetalks.com'>
-                        <h4>info@backstagetalks.com</h4> </a>
-                    <FooterRightArea />
-                </footer>
-            }
+        <BgColor.Provider value={setBgColor}>
+            <section className={styles.app}>
+                <header className={styles.LeftSideBar}>
+                    <img className={styles.headerImage} src={LogoIcon} alt='backstage-logo' onClick={Reload} />
+                    {/* If mobile, LeftSidebar is become row & will hold Logo and MailText*/}
+                    {isMobile ? <a className={styles.MailText} href='mailto:info@backstagetalks.com'><h4>info@backstagetalks.com</h4></a> : <FooterLeftArea />}
+                </header>
+                <section className={styles.contentRow} style={{
+                    // backgroundColor: bgColor,
+                    animationDelay: "calc(var(--bg))"
+                }}>
+                    <MagazineBody {...magazines[0]} />
+                    <MagazineBody {...magazines[1]} />
+                    <MagazineBody {...magazines[2]} />
+                    <MagazineBody {...magazines[3]} />
+                    <MagazineBody {...magazines[4]} />
+                    <MagazineBody {...magazines[5]} />
+                    {isMobile ? <FooterLeftArea /> : <></>}
+                </section>
+                {isMobile ?
+                    <></> :
+                    <footer className={styles.footer}>
+                        {/* If mobile, footer is become row & will hold footerleft*/}
+                        <a className={styles.MailText} href='mailto:info@backstagetalks.com'>
+                            <h4>info@backstagetalks.com</h4> </a>
+                        <FooterRightArea />
+                    </footer>
+                }
 
-        </section>
+            </section>
+        </BgColor.Provider>
     );
 }
 
